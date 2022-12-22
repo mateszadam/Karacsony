@@ -47,5 +47,7 @@ body{
     background-color: red;
     z-index: 200;
     display: none;
-
+}
+h1, p{
+    text-align: center;
 }

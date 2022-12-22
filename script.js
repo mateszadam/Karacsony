@@ -1,14 +1,35 @@
 let snowDiv = document.querySelector("#snowDiv")
 let nL = document.querySelector("#navLeft")
-nL.addEventListener("click", moveL)
+let IL
+let IR
+nL.addEventListener("mouseenter", () => {
+    IL = setInterval(moveL, 100);
+    
+})
+nL.addEventListener("mouseout", () => {
+    clearInterval(IL);
+
+    
+})
 let nR = document.querySelector("#navRight")
-nR.addEventListener("click", moveR)
+nR.addEventListener("mouseenter", () => {
+    IR = setInterval(moveR, 100);
+    
+})
+nR.addEventListener("mouseout", () => {
+    clearInterval(IR);
+
+    
+})
 let B = document.querySelector("#basket")
 B.style.left = "100px";
 let point = 0
 
-setInterval(genereteSnow, 1500);
-setInterval(moveSnow, 200);
+let Loose = document.querySelector("#loose")
+let LoosePoint = document.querySelector("#pont")
+
+let I1 = setInterval(genereteSnow, 1500);
+let I2 = setInterval(moveSnow, 200);
 var body = document.body,
     html = document.documentElement;
 
@@ -39,7 +60,7 @@ function moveSnow() {
     a.forEach(element => {
         element.style.top = parseInt(element.style.top) + 10 + "px"
         if (basketH < parseInt(element.style.top)) {
-            if (parseInt(element.style.marginLeft) > parseInt(B.style.left) 
+            if (parseInt(element.style.marginLeft) +50 > parseInt(B.style.left) 
              && parseInt(element.style.marginLeft) < parseInt(B.style.left) + parseInt(B.offsetWidth)) {
                 element.remove();
                 point ++;
@@ -47,7 +68,7 @@ function moveSnow() {
             else{
                 console.log("vesztettés");
                 element.remove();
-            
+                loose()
             }
         }
     });
@@ -56,10 +77,11 @@ function moveSnow() {
 
 
 function loose() {
-    
+    Loose.style.display = "block"
+    LoosePoint.innerHTML = point
+    clearInterval(I1);
+    clearInterval(I2);
 }
-
-
 
 
 
@@ -70,6 +92,11 @@ function moveL(){
     B.style.left = parseInt(B.style.left) - 10 + "px"; 
     }
 }
+
+
+
+
+
 function moveR(){
     let L = parseInt(B.style.left) + 200;
 
