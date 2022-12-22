@@ -78,7 +78,7 @@ function moveSnow() {
 
 function loose() {
     Loose.style.display = "block"
-    LoosePoint.innerHTML = point
+    LoosePoint.innerHTML = point + "pontot értél el!"
     clearInterval(I1);
     clearInterval(I2);
 }
