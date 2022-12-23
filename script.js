@@ -15,10 +15,6 @@ if (localStorage.getItem("key") == "null")  {
 }
 
 
-if (localStorage.getItem("name") == null)  {
-    let uName = prompt("Add meg a neved: ");
-    localStorage.setItem("name", uName);
-}
 
 function crateStat() {
   fetch("api.php")
@@ -117,7 +113,7 @@ function moveSnow() {
 
 function loose() {
   Loose.style.display = "block";
-  LoosePoint.innerHTML = localStorage.getItem("name") + " " + point + " pontot értél el!";
+  LoosePoint.innerHTML = point + " pontot értél el!";
   const value = localStorage.getItem("key")
   console.log(stat);
   if (point > value) {
