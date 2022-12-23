@@ -15,7 +15,7 @@ if (localStorage.getItem("key") == "null")  {
 }
 
 
-if (localStorage.getItem("name") == "null")  {
+if (localStorage.getItem("name") == null)  {
     let uName = prompt("Add meg a neved: ");
     localStorage.setItem("name", uName);
 }
