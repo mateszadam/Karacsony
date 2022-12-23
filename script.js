@@ -4,7 +4,11 @@ let nL = document.querySelector("#navLeft");
 let IL;
 let IR;
 let stat = [];
-
+let Rb = document.querySelector("#rBtn");
+Rb.addEventListener("click", reload)
+function reload() {
+    location.reload();
+}
 
 if (localStorage.getItem("key") == "null")  {
     localStorage.setItem("key", 0)
@@ -110,10 +114,10 @@ function moveSnow() {
     }
   });
 }
-let fOut = ""
+
 function loose() {
   Loose.style.display = "block";
-  LoosePoint.innerHTML = point + " pontot értél el!";
+  LoosePoint.innerHTML = localStorage.getItem("name") + " " + point + " pontot értél el!";
   const value = localStorage.getItem("key")
   console.log(stat);
   if (point > value) {
@@ -139,10 +143,7 @@ function loose() {
 //   fileW();
 }
 
-function fileW() {
-    console.log(fOut);
 
-}
 
 
 function moveL() {
