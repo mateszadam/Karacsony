@@ -1,4 +1,8 @@
-
+fetch('api.php')
+  .then(response => response.text())
+  .then(data => {
+    console.log(data); // A fájl tartalma
+  });
 
 let snowDiv = document.querySelector("#snowDiv")
 let nL = document.querySelector("#navLeft")
