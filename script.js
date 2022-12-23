@@ -1,3 +1,5 @@
+
+
 let snowDiv = document.querySelector("#snowDiv")
 let nL = document.querySelector("#navLeft")
 let IL
@@ -27,6 +29,8 @@ let point = 0
 
 let Loose = document.querySelector("#loose")
 let LoosePoint = document.querySelector("#pont")
+let MPoint = document.querySelector("#mPont")
+
 
 let I1 = setInterval(genereteSnow, 1500);
 let I2 = setInterval(moveSnow, 200);
@@ -78,7 +82,12 @@ function moveSnow() {
 
 function loose() {
     Loose.style.display = "block"
-    LoosePoint.innerHTML = point + "pontot értél el!"
+    LoosePoint.innerHTML = point + " pontot értél el!"
+    const value = localStorage.getItem('key');
+    if (point > value) {
+        localStorage.setItem('key', point);  
+    }
+    MPoint.innerHTML = value + " a max pontod";
     clearInterval(I1);
     clearInterval(I2);
 }
