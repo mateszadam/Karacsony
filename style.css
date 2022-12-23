@@ -38,6 +38,7 @@ body{
     background-color: green;
     position: absolute;
     bottom: 210px;
+    transition: all 0.3s;
     left: 20px;
 }
 #loose{
