@@ -12,28 +12,14 @@
         <h1>Vesztettél!</h1>
         <p id="pont"></p>
         <p id="mPont"></p>
-
+        <p id="T"></p>
     </div>
     <div id="snowDiv">
 
     </div>
 
     <div id="basket">
-        <?php
 
-        // Megnyitjuk a fájlt olvasásra
-        $file = fopen('file.txt', 'r');
-        
-        // Fájl tartalmát beolvassuk
-        $content = fread($file, filesize('file.txt'));
-        
-        // Bezárjuk a fájlt
-        fclose($file);
-        
-        // A fájl tartalmát kiíratjuk
-        echo $content;
-        
-        ?>
     </div>
 
     <div id="nav">
