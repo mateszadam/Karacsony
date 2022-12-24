@@ -1,40 +1,36 @@
-
 let snowDiv = document.querySelector("#snowDiv");
 let nL = document.querySelector("#navLeft");
 let IL;
 let IR;
 let stat = [];
 let Rb = document.querySelector("#rBtn");
-Rb.addEventListener("click", reload)
+Rb.addEventListener("click", reload);
 function reload() {
-    location.reload();
+  location.reload();
 }
 
-if (localStorage.getItem("key") == "null")  {
-    localStorage.setItem("key", 0)
+if (localStorage.getItem("key") == "null") {
+  localStorage.setItem("key", 0);
 }
 
+// function crateStat() {
+//   fetch("api.php")
+//     .then((response) => response.text())
+//     .then((data) => {
+//       // A fájl tartalma
+//       setTimeout(w, 200);
+//       console.log(data);
+//       let a = data.split("\r\n");
+//       for (let index = 0; index < a.length; index++) {
+//         const element = a[index];
+//         console.log(element);
+//         stat.push(element);
+//         console.log(stat);
+//       }
+//       console.log(stat);
+//       console.log(stat);
+//     });
 
-
-function crateStat() {
-  fetch("api.php")
-    .then((response) => response.text())
-    .then((data) => {
-      // A fájl tartalma
-      setTimeout(w, 200);
-      console.log(data);
-      let a = data.split("\r\n");
-      for (let index = 0; index < a.length; index++) {
-        const element = a[index];
-        console.log(element);
-        stat.push(element);
-        console.log(stat);
-      }
-      console.log(stat);
-      console.log(stat);
-    });
-
-}
 function w() {
   console.log("vár");
 }
@@ -114,7 +110,7 @@ function moveSnow() {
 function loose() {
   Loose.style.display = "block";
   LoosePoint.innerHTML = point + " pontot értél el!";
-  const value = localStorage.getItem("key")
+  const value = localStorage.getItem("key");
   console.log(stat);
   if (point > value) {
     localStorage.setItem("key", point);
@@ -122,25 +118,22 @@ function loose() {
   MPoint.innerHTML = localStorage.getItem("key") + " a max pontod";
   clearInterval(I1);
   clearInterval(I2);
-//   console.log(stat.length);
-//   for (let index = 0; index < stat.length; index++) {
-//     console.log(stat[0]);
-//     let e = stat[index].split(";");
-//     console.log(e);
-//     out += e[0] + " elért pontja: " + e[1] + "<br>";
-//     if (localStorage.getItem("name") != e[0]) {
-//         fOut += e[0] + ";" + e[1] + "\r\n";
-        
-//     }
-//   }
-//   fOut += localStorage.getItem("name") + ";" + localStorage.getItem("key")
-//   console.log(out);
-//   tPoint.innerHTML = out;
-//   fileW();
+  //   console.log(stat.length);
+  //   for (let index = 0; index < stat.length; index++) {
+  //     console.log(stat[0]);
+  //     let e = stat[index].split(";");
+  //     console.log(e);
+  //     out += e[0] + " elért pontja: " + e[1] + "<br>";
+  //     if (localStorage.getItem("name") != e[0]) {
+  //         fOut += e[0] + ";" + e[1] + "\r\n";
+
+  //     }
+  //   }
+  //   fOut += localStorage.getItem("name") + ";" + localStorage.getItem("key")
+  //   console.log(out);
+  //   tPoint.innerHTML = out;
+  //   fileW();
 }
-
-
-
 
 function moveL() {
   let L = parseInt(B.style.left);
